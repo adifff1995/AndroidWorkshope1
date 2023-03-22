@@ -15,6 +15,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupMenu;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -52,9 +53,10 @@ public class ProfileActivity extends AppCompatActivity {
         binding.btnAddNewStudent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(ProfileActivity.this, SecondActivity.class);
-                intent.putExtra("type", 1);
-                resultLauncher.launch(intent);
+//                Intent intent = new Intent(ProfileActivity.this, SecondActivity.class);
+//                intent.putExtra("type", 1);
+//                resultLauncher.launch(intent);
+                showPopUp(view);
             }
         });
 
@@ -67,6 +69,28 @@ public class ProfileActivity extends AppCompatActivity {
             }
         });
 
+
+    }
+
+    private void showPopUp(View v){
+        PopupMenu popupMenu = new PopupMenu(ProfileActivity.this,v);
+        MenuInflater menuInflater = popupMenu.getMenuInflater();
+        menuInflater.inflate(R.menu.menu,popupMenu.getMenu());
+        popupMenu.setOnMenuItemClickListener(new PopupMenu.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem menuItem) {
+                switch (menuItem.getItemId()){
+                    case R.id.menu_add_std:
+                        Toast.makeText(ProfileActivity.this, "Student", Toast.LENGTH_SHORT).show();
+                        break;
+                    case R.id.menu_add_teach:
+                        Toast.makeText(ProfileActivity.this, "Teacher", Toast.LENGTH_SHORT).show();
+                        break;
+                }
+                return true;
+            }
+        });
+        popupMenu.show();
 
     }
 
