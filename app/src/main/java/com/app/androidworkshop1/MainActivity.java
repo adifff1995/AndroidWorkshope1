@@ -30,20 +30,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
                 String s1 = ed_num1.getText().toString();
                 String s2 = ed_num2.getText().toString();
-               if (s1.isEmpty()){
-                   ed_num1.setError("Fill Feilds");
-                   Toast.makeText(MainActivity.this, "plese enter first number", Toast.LENGTH_SHORT).show();
-               }else  if ( s2.isEmpty()){
-                   ed_num2.setError("Fill Feilds");
-                   Toast.makeText(MainActivity.this, "please enter second number", Toast.LENGTH_SHORT).show();
-               }
+            if (s1.isEmpty()){
+                ed_num1.setError("fill fealsd");
+            } else if (s2.isEmpty()) {
+                ed_num2.setError("fill fealsd");
 
-               else{
-                   int num1 = Integer.parseInt(ed_num1.getText().toString());
-                   int num2 = Integer.parseInt(ed_num2.getText().toString());
-                   int sum = num1 + num2;
-                   tv_result.setText(sum + "");
-               }
+            }else {
+                int num1 = Integer.parseInt(ed_num1.getText().toString());
+                int num2 = Integer.parseInt(ed_num2.getText().toString());
+                int sum = num1 + num2;
+                tv_result.setText(sum + "");
+            }
+
+
 
 
             }

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/menu_add_std"
+        android:icon="@drawable/baseline_add_24"
+        app:showAsAction="always"
+        android:title="Add New Student" />
+
+
+    <item
+        android:id="@+id/menu_add_teach"
+        android:icon="@drawable/baseline_cancel_24"
+        android:title="Add New Teacher" />
+
+</menu>
